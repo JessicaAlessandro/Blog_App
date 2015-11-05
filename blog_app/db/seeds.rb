@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Entry.create( title: "Big Poppa", content: "(I love it when you call me Big Pop-pa)
+Throw your hands in the air, if youse a true player
+(I love it when you call me Big Pop-pa)
+To the honies gettin money playin niggaz like dummies
+(I love it when you call me Big Pop-pa)
+If you got a gun up in your waist please don't shoot up the place
+Cause I see some ladies tonight who should be havin my baby
+Bay-bee", author: "Notorious B.I.G.")

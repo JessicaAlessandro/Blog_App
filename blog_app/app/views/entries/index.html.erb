@@ -1,0 +1,25 @@
+
+<h1>Blog Posts</h1>	
+
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Entry</th>
+			<th>Author</th>
+			<th>Date Posted</th>
+		</tr>
+	</thead>
+
+	<% @entries.each do |entry| %>
+	<tr>
+		<td><%= entry.title %></td>
+		<td><%= entry.content %></td>
+		<td><%= entry.author %></td>
+		<td><%= entry.created_at.strftime("%b. %d, %Y") %></td>
+	</tr>
+<% end %>
+
+</table>
