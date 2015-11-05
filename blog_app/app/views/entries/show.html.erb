@@ -1,0 +1,7 @@
+<h1><%= @entry.title %></h1>
+<h3>By: <%= @entry.author %></h3>
+<h4> <%= @entry.content %></h4>
+<h5><%= @entry.created_at.strftime("%b. %d, %Y")  %></h5>
+
+<p> <%=button_to "Delete",entry_path(@entry.id), :method => :delete, :class => "delete"%> </p>
+<%= button_to 'Edit', edit_entry_path(@entry), :method => :get %>

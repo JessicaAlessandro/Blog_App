@@ -1,7 +1,4 @@
-
 <h1>Blog Posts</h1>	
-
-
 
 <table>
 	<thead>
@@ -10,6 +7,7 @@
 			<th>Entry</th>
 			<th>Author</th>
 			<th>Date Posted</th>
+			<th>View</th>
 		</tr>
 	</thead>
 
@@ -19,7 +17,11 @@
 		<td><%= entry.content %></td>
 		<td><%= entry.author %></td>
 		<td><%= entry.created_at.strftime("%b. %d, %Y") %></td>
+		<td> <%= link_to 'View', entry_path(entry) %> </td>
 	</tr>
 <% end %>
 
 </table>
+
+
+<%= link_to 'Create New Post', new_entry_path %>
