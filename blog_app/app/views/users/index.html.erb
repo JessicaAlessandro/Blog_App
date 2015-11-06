@@ -13,8 +13,10 @@
 	<tr>
 		<td><%= entry.author %></td>
 		<td><%= entry.user.email %></td>
-		<td> <%= link_to 'View', user_path(entry) %> </td>
+		<td> <%= link_to 'View', user_entry_path(entry) %> </td>
 	</tr>
 <% end %>
 
 </table>
+
+<a href="/users/:user_id/entry/new">Create New Post</a>

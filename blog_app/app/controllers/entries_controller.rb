@@ -5,42 +5,43 @@ class EntriesController < ApplicationController
     @entries = Entry.all
   end
 
-  def new
-    @entry = current_user.entries.build
-    if @entry.save
-    redirect_to new_entry_path
-    end
-  end
+  # def new
+  #     @entry = Entry.new
+  #   # @entry = current_user.entries.build
+  #   # if @entry.save
+  #   # redirect_to new_entry_path
+  #   # end
+  # end
 
-  def create
-    @entry = current_user.entries.build(entry_params)
-    if @entry.save
-      redirect_to entries_path
-    end
-  end
+  # def create
+  #   @entry = current_user.entries.build(entry_params)
+  #   if @entry.save
+  #     redirect_to entries_path
+  #   end
+  # end
 
-  def edit
-    @entry = Entry.find(params[:id])
-  end
+  # def edit
+  #   @entry = Entry.find(params[:id])
+  # end
 
-  def update
-    @entry = Entry.find(params[:id])
-    if @entry.update(entry_params)
-      redirect_to entries_path
-    else
-      render :action => :edit
-    end
-  end
+  # def update
+  #   @entry = Entry.find(params[:id])
+  #   if @entry.update(entry_params)
+  #     redirect_to entries_path
+  #   else
+  #     render :action => :edit
+  #   end
+  # end
 
   def show
-    @entry = Entry.find(params[:id])
+    @entry = Entry.all
   end
 
-  def destroy
-    @entry = Entry.find(params[:id])
-    @entry.destroy
-    redirect_to entries_path
-  end
+  # def destroy
+  #   @entry = Entry.find(params[:id])
+  #   @entry.destroy
+  #   redirect_to entries_path
+  # end
 
   private
     def entry_params

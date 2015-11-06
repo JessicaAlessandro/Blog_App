@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
-  # devise_for :users
-  # resources :entries
+ #  # devise_for :users
+ #  # resources :entries
 
-	resources :users do
-	  resource :entry
-	end
-	
-  # root 'entries#index'
-  	root 'users#index'
+	# resources :users do
+	#   resource :entry
+	# end
+
+ #  # root 'entries#index'
+ #  	root 'users#index'
 	# devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
+
+devise_for :user, :path => "registrations"
+
+resources :users do
+  resource :entry
+end
+ 	root 'users#index'
 
 # ===============
 # My Rake Routes

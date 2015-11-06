@@ -1,21 +1,24 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!, :except => [:show, :index]
+  before_action :authenticate_user!, :except => [:show, :index]
   
   def index 
     @entries = Entry.all
   end
 
   def new
-    @entry = Entry.create
-    if @entry.save
-    redirect_to new_user_entry
-    end
+    @entry = Entry.new
+    # @entry = current_user.entries.build
+    # if @entry.save
+    # redirect_to new_user_entry_path
+    # end
   end
 
-  def create
-    @entry = Entry.create(neighborhood_params)
-    redirect_to user_entry_path
-  end
+  # def create
+  #   @entry = Entry.create
+  #   if @entry.save
+  #   redirect_to new_user_entry
+  #   end
+  # end
 
   # def create
   #   @entry = current_user.entries.build(entry_params)
@@ -37,9 +40,9 @@ class UsersController < ApplicationController
   #   end
   # end
 
-  # def show
-  #   @entry = Entry.find(params[:id])
-  # end
+  def show
+    @entry = Entry.find(params[:id])
+  end
 
   # def destroy
   #   @entry = Entry.find(params[:id])

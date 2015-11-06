@@ -1,7 +1,11 @@
-<h1><%= @entry.title %></h1>
-<h3>By: <%= @entry.author %></h3>
-<p> <%= @entry.content %></p>
-<h5><%= @entry.created_at.strftime("%b. %d, %Y")  %></h5>
+<% @entries.each do |entry| %>
+	<h1><%= @user.entry.title %></h1>
+	<h3>By: <%= @user.entry.author %></h3>
+	<p> <%= @user.entry.content %></p>
+	<h5><%= @user.entry.created_at.strftime("%b. %d, %Y") %></h5>
+<% end %>
+
+
 
 
 

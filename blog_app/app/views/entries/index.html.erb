@@ -17,11 +17,11 @@
 		<td><%= entry.author %></td>
 		<td><%= entry.user.email %></td>
 		<td><%= entry.created_at.strftime("%b. %d, %Y") %></td>
-		<td> <%= link_to 'View', entry_path(entry) %> </td>
+		<td> <%= link_to 'View', user_entry(entry) %> </td>
 	</tr>
 <% end %>
 
 </table>
 
 
-<%= link_to 'Create New Post', new_entry_path %>
+<%= link_to 'Create New Post', new_user_entry_path %>
