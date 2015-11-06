@@ -2,23 +2,17 @@ Rails.application.routes.draw do
   devise_for :users
   resources :entries
 
+	# resources :users do
+	#   resource :entry
+	# end
   root 'entries#index'
 
+
+  # get '/users/:user_id/entry' => 'entries#show', :as => 'user_entry_path'
 
 
 # ===============
 # My Rake Routes
 # ===============
-#     Prefix Verb   URI Pattern                 Controller#Action
-#    entries GET    /entries(.:format)          entries#index
-#            POST   /entries(.:format)          entries#create
-#  new_entry GET    /entries/new(.:format)      entries#new
-# edit_entry GET    /entries/:id/edit(.:format) entries#edit
-#      entry GET    /entries/:id(.:format)      entries#show
-#            PATCH  /entries/:id(.:format)      entries#update
-#            PUT    /entries/:id(.:format)      entries#update
-#            DELETE /entries/:id(.:format)      entries#destroy
-
-
 
 end

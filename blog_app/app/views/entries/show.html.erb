@@ -3,5 +3,10 @@
 <h4> <%= @entry.content %></h4>
 <h5><%= @entry.created_at.strftime("%b. %d, %Y")  %></h5>
 
+
+
+<!-- only signed in users will see the Delete or Edit buttons -->
+<% if user_signed_in? %>
 <p> <%=button_to "Delete",entry_path(@entry.id), :method => :delete, :class => "delete"%> </p>
 <%= button_to 'Edit', edit_entry_path(@entry), :method => :get %>
+<% end %>
