@@ -1,0 +1,20 @@
+<h1>Blog Posts</h1>	
+
+<table>
+	<thead>
+		<tr>
+			<th>Author</th>
+			<th>E-mail</th>	
+			<th>View</th>
+		</tr>
+	</thead>
+
+	<% @entries.each do |entry| %>
+	<tr>
+		<td><%= entry.author %></td>
+		<td><%= entry.user.email %></td>
+		<td> <%= link_to 'View', user_path(entry) %> </td>
+	</tr>
+<% end %>
+
+</table>
