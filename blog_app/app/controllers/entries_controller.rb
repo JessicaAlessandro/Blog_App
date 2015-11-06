@@ -1,18 +1,16 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index]
   
-	def index 
+  def index 
     @entries = Entry.all
-	end
+  end
 
-	def new
-		@entry = current_user.entries.build
+  def new
+    @entry = current_user.entries.build
     if @entry.save
-    redirect_to entries_path
-    else
-    redirect_to new_user_registration
+    redirect_to new_entry_path
     end
-	end
+  end
 
   def create
     @entry = current_user.entries.build(entry_params)
@@ -27,12 +25,12 @@ class EntriesController < ApplicationController
 
   def update
     @entry = Entry.find(params[:id])
-		if @entry.update(entry_params)
-			redirect_to entries_path
-		else
-			render :action => :edit
-		end
-	end
+    if @entry.update(entry_params)
+      redirect_to entries_path
+    else
+      render :action => :edit
+    end
+  end
 
   def show
     @entry = Entry.find(params[:id])

@@ -11,9 +11,9 @@
 	<!-- displays flash messages -->
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
-  <%= link_to "Sign Up", new_user_registration_path %>
-  <%= link_to "Sign In", new_user_session_path %>
+<div>
+ <h4>  <%= link_to "Sign Up", new_user_registration_path %>    Already a member? <%= link_to "Sign In", new_user_session_path %> </h4>
+</div>
 <%= yield %>
 
 </body>
