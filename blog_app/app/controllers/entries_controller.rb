@@ -1,16 +1,24 @@
 class EntriesController < ApplicationController
-
-	def index 
+  before_action :authenticate_user!, :except => [:show, :index]
+	
+  def index 
     @entries = Entry.all
 	end
 
 	def new
-		@entry = Entry.new
+		@entry = current_user.entries.build
+    if @entry.save
+    redirect_to entries_path
+    else
+    redirect_to new_user_registration
+    end
 	end
 
   def create
-    @entry = Entry.create(entry_params)
-    redirect_to entries_path
+    @entry = current_user.entries.build(entry_params)
+    if @entry.save
+      redirect_to entries_path
+    end
   end
 
   def edit
@@ -35,12 +43,9 @@ class EntriesController < ApplicationController
     @entry.destroy
     redirect_to entries_path
   end
+
+  private
+    def entry_params
+      params.require(:entry).permit(:title, :author, :content, :created_at)
+    end
 end
-
- private
-
-  def entry_params
-    params.require(:entry).permit(:title, :author, :content, :created_at)
-  end
-
-
