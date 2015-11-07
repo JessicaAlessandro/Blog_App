@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :entries
 
-	# resources :users do
-	#   resource :entry
-	# end
+  # resources :users do
+  #   resource :entry
+  # end
   root 'entries#index'
 
 

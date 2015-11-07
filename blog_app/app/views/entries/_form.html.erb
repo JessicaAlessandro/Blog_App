@@ -1,6 +1,6 @@
 <%= form_for @entry do |form| %>
   Title: <%= form.text_field :title %></br>
-  Content: <%= form.text_field :content %></br>
+  Content: <%= form.text_area :content %></br>
   Author: <%= form.text_field :author %></br>
   <%= form.submit %>
 <% end %>
