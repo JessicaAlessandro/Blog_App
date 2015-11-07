@@ -2,7 +2,7 @@
 <h3>By: <%= @entry.author %></h3>
 <h4> <%= @entry.content %></h4>
 <h5><%= @entry.created_at.strftime("%b. %d, %Y")  %></h5>
-<h5> Submitted <%= time_ago_in_words(@entry.created_at)%>
+<h5> Submitted <%= time_ago_in_words(@entry.created_at)%> ago </h5>
 
 
 
@@ -11,3 +11,11 @@
 <p> <%=button_to "Delete",entry_path(@entry.id), :method => :delete, :class => "delete"%> </p>
 <%= button_to 'Edit', edit_entry_path(@entry), :method => :get %>
 <% end %>
+
+	<div id="comments">
+		<h2><%= @entry.comments.count %> Comments</h2>
+		<%= render @entry.comments %>
+
+		<h3>Add a comment:</h3>
+		<%= render "comments/form" %>
+	</div>
