@@ -26,8 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #adding gem file
 gem 'devise'
 
-# foundations gem
-gem "foundation-rails"
+gem 'rails_12factor'
 
 
 group :development, :test do
