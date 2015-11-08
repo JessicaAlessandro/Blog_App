@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title></title>
+	  <link rel="stylesheet" type="text/css" href="assets/stylesheets/entry_index.css">
+</head>
+<body>
+	<div class="box">
+		<% @entries.each do |entry| %>
+			<div class="entry">
+				<h2 class="title"><%= link_to entry.title, entry %></h2>
+				<p class="date"><%= entry.created_at.strftime("%B %d, %Y") %>
+				</p>
+				<p class="posts"> <%= entry.content %></p>
+			</div>
+		<% end %>
+	<div>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'normalize';
+
+html, body {
+	font-family: 'Raleway', sans-serif;
+	position: fixed;
+	width: 100%
+}
+
+.nav{
+	position: fixed;
+	width: 100%; 
+	background: #f5f7f9;
+  border:1px solid #d6dce0;
+  border-width:1px 0;
+  list-style:none;
+  margin:0;
+  padding:0;
+  text-align:center;
+  padding-top: -3em;
+  text-transform: uppercase;
+}
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding:10px;
+}
+
+a:link { 
+	font-size: 1em;
+	color: #33acb7;
+	text-decoration: none;
+}
+
+/*Visited links.*/
+a:visited { 
+	font-size: 1em;
+	color: #33acb7;
+  text-decoration: none;
+}
+
+/*The user mouses over a link.*/
+a:hover { 
+	font-size: 1.3em;
+	color: #33acb7;
+}
+
+#title{
+	text-align: center;
+	font-size: 2em;
+	color: #33acb7;
+	padding-bottom: -2ex;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.footer{
+	position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+  background:#f5f7f9;
+  border:1px solid #d6dce0;
+	border-width:1px 0;
+	text-align: center;
+}
+
+#footer button{
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: right;
+	background: #f5f7f9;
+}
