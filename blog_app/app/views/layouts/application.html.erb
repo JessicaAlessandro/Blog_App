@@ -1,25 +1,41 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BlogApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>My Super Fantastic Blog</title>
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <p id= "title">My Amazing Blog</p>
+  <div class="nav">
+        <ul>
+          <li><a href="/entries"> Home </a></li>
+          <li><a href="/entries/new"> Create New Post </a><li>
+          <li><a href="http://www.facebook.com/">Facebook</a></li>
+          <li><a href="https://wwww.twitter.com/">Twitter</a></li>
+          <li><a href="http://www.instagram.com">Instagram</a></li>
+        </ul>
+  </div>
 
-	<!-- displays flash messages -->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="footer">
+        <%= link_to "Back to All Posts", root_path %> 
 
-  <% if user_signed_in? %>
-	<p><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
-   <% else %>
-		<p><%= link_to "Sign Up", new_user_registration_path %> Already a user?  <%= link_to "Sign In", new_user_session_path %></p>
-  <% end %>
- 
-<%= yield %>
+    <% if user_signed_in? %>
+      |<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      | <%= link_to "Sign Up", new_user_registration_path %> | <%= link_to "Sign In", new_user_session_path %>
+    <% end %>
+          
+  </div> 
 
+   
+
+  <!-- displays flash messages -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  <%= yield %>
 </body>
 </html>
+

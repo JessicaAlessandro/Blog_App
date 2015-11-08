@@ -1,0 +1,8 @@
+@import 'normalize';
+
+.entry-form{
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	top: 0px;
+	left: 0px;
+}

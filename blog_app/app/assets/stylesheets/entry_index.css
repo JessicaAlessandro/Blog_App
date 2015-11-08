@@ -1,0 +1,20 @@
+@import 'normalize';
+
+html, body {
+	font-family: 'Raleway', sans-serif;
+	position: fixed;
+	width: 100%;
+	max-height: 600px;
+}
+
+.box{
+	width: 75%;
+	max-height: 320px;
+	border:1px solid #d6dce0;
+	overflow: auto;
+	text-align: left;
+	position: fixed;
+	top: 35%;
+	left: 12.5%;
+	background: #f5f7f9;
+}

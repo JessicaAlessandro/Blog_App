@@ -1,7 +1,30 @@
-<%= form_for @entry do |form| %>
-  Title: <%= form.text_field :title %></br>
-  Content: <%= form.text_area :content %></br>
-  Author: <%= form.text_field :author %></br>
-  <%= form.submit %>
-<% end %>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css">
+</head>
+<body>
+	<div class="entry-form">	
+		<%= form_for @entry do |form| %>
+		  <div class="field">
+	    <%= form.label :title %><br />
+	    <%= form.text_field :title %>
+	  	</div>
+			
+			<div class="field">
+	    <%= form.label :Content %><br />
+	    <p><%= form.text_area :content %></p>
+	  	</div>
+	  	
+	  	<div class="field">
+	    <%= form.label :author %><br />
+	    <%= form.text_field :author %>
+	  	</div>
+	  	<div>
+	  		  <%= form.submit %>
+	  	</div>
+	  </div>	
+  <% end %>
+</body>
+</html>
 

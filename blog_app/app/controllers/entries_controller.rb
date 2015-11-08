@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index]
   
   def index 
-    @entries = Entry.all
+    @entries = Entry.all.order('created_at DESC')
   end
 
   def new
