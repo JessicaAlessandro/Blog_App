@@ -1,0 +1,16 @@
+@import 'normalize';
+
+html, body {
+	font-family: 'Raleway', sans-serif;
+	position: fixed;
+	width: 100%;
+	max-height: 600px;
+}
+
+.center{
+	width: 100% ;
+	text-align: center;
+	position: fixed;
+	top: 35%;
+	color: #33acb7;
+}
