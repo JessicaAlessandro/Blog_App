@@ -18,20 +18,33 @@ html, body {
 	left: 12.5%;
 	padding-left: 3px;
 	background: #f5f7f9;
-	color: #33acb7;
 }
 
 .title{
 	font-weight: 700;
 	font-size: 28px;
+	color: #33acb7;
+}
+
+#author{
+	color: #33acb7;
+}
+
+#post{
+
 }
 
 .date{
 	font-size: 14px;
 	font-weight: 700;
+	color: #33acb7;
 }
 
 #comments {
 	padding-top: -6px;
 	padding-bottom: 3px;
+}
+
+.comment-header{
+		color: #33acb7;
 }
