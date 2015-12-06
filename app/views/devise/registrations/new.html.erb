@@ -5,35 +5,29 @@
 </head>
 <body>
 <div class="user-form">
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<form class="pure-form pure-form-stacked">
+    <fieldset>
+        <legend>Sign Up</legend>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email">
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password">
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        <label for="password_confirmation">Password</label>
+        <input id="password" type="password_confirmation" placeholder="Password">
 
-<%= render "devise/shared/links" %>
+
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+    <%= render "devise/shared/links" %>
+</form>
+
+
+
 
 </div>
 </body>

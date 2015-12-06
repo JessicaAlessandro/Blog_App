@@ -2,35 +2,36 @@
 <html>
 <head>
   <title>My Super Fantastic Blog</title>
-  <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/application.css">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p id= "title">My Amazing Blog</p>
-  <div class="nav">
-        <ul>
-          <li><a href="/entries"> Home </a></li>
-          <li><a href="/entries/new"> Create New Post </a><li>
-          <li><a href="http://www.facebook.com/">Facebook</a></li>
-          <li><a href="https://wwww.twitter.com/">Twitter</a></li>
-          <li><a href="http://www.instagram.com">Instagram</a></li>
-        </ul>
-  </div>
-
-  <div class="footer">
-        <%= link_to "Back to All Posts", root_path %> 
-
-    <% if user_signed_in? %>
-      |<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      | <%= link_to "Sign Up", new_user_registration_path %> | <%= link_to "Sign In", new_user_session_path %>
-    <% end %>
-          
+  <div class="user-links">
+    <li class="user-list"><a href="/users/sign_up" class="user-link">Sign Up | </a></li>
+    <li class="user-list"><a href="/users/sign_in" class="user-link">Sign In | </a></li>
+      <li class="user-list"><a href="/users/sign_out" class="user-link"> Log Out</a></li>
   </div> 
 
-   
+
+  <div class="pure-g">
+    <div class="pure-u-1-1"><p>My Amazing Blog</p></div>
+</div>
+
+
+
+  <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="/entries" class="pure-menu-link">HOME</a></li>
+        <li class="pure-menu-item"><a href="/entries/new" class="pure-menu-link">Create New Post</a></li>
+        <li class="pure-menu-item"><a href="http://www.facebook.com/" class="pure-menu-link">Facebook</a></li>
+        <li class="pure-menu-item"><a href="https://www.twitter.com/" class="pure-menu-link">Twitter</a></li>
+        <li class="pure-menu-item"><a href="http://www.instagram.com" class="pure-menu-link">Instagram</a></li>
+    </ul>
+  </div>
+
 
   <!-- displays flash messages -->
     <p class="notice"><%= notice %></p>
@@ -38,4 +39,6 @@
   <%= yield %>
 </body>
 </html>
+
+
 

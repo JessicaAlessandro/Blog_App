@@ -1,39 +1,30 @@
 <html>
 <head>
   <title></title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" type="text/css" href="assets/stylesheets/user_form.css">
 </head>
 <body>
-<div class="user-form">
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<form class="pure-form pure-form-stacked">
+    <fieldset>
+        <legend>Log In</legend>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <p class="type"><%= f.password_field :password, autocomplete: "off" %></p>
-    
-  </div>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email">
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password">
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+        <label for="remember" class="pure-checkbox">
+            <input id="remember" type="checkbox"> Remember me
+        </label>
 
-<%= render "devise/shared/links" %>
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+    <%= render "devise/shared/links" %>
+</form>
 
-</div>
 </body>
 </html>
 
