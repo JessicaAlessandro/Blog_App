@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.4"
+# gem ruby "2.2.4"
 
 gem 'rubygems-update', '~> 2.2', '>= 2.2.4'
 
